@@ -1,6 +1,10 @@
 package com.mlsdev.androidanimations.library
 
 import android.view.View
+import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInUpAnimator
 import com.mlsdev.androidanimations.library.zoom.`in`.*
 import com.mlsdev.androidanimations.library.zoom.out.*
 import java.lang.RuntimeException
@@ -17,7 +21,11 @@ class AnimationUtils {
             ZoomInDownAnimator::class.java.simpleName,
             ZoomInLeftAnimator::class.java.simpleName,
             ZoomInRightAnimator::class.java.simpleName,
-            ZoomInUpAnimator::class.java.simpleName
+            ZoomInUpAnimator::class.java.simpleName,
+            SlideInDownAnimator::class.java.simpleName,
+            SlideInLeftAnimator::class.java.simpleName,
+            SlideInRightAnimator::class.java.simpleName,
+            SlideInUpAnimator::class.java.simpleName
         )
 
         fun getAnimation(
@@ -55,6 +63,18 @@ class AnimationUtils {
                 }
                 ZoomInUpAnimator::class.java.simpleName -> {
                     ZoomInUpAnimator(view, animationParams)
+                }
+                SlideInDownAnimator::class.java.simpleName -> {
+                    SlideInDownAnimator(view, animationParams)
+                }
+                SlideInLeftAnimator::class.java.simpleName -> {
+                    SlideInLeftAnimator(view, animationParams)
+                }
+                SlideInRightAnimator::class.java.simpleName -> {
+                    SlideInRightAnimator(view, animationParams)
+                }
+                SlideInUpAnimator::class.java.simpleName -> {
+                    SlideInUpAnimator(view, animationParams)
                 }
                 else -> {
                     throw RuntimeException("Unknown animation name")

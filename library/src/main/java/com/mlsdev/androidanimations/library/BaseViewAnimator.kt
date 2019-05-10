@@ -9,34 +9,30 @@ import android.view.animation.Interpolator
 
 abstract class BaseViewAnimator(
     private val target: View,
-    private val animationParams: AnimationParams = AnimationParams()
+    protected var animationParams: AnimationParams
 ) {
 
     private var animatorSet: AnimatorSet = AnimatorSet()
 
-
-    protected abstract fun prepare(target: View)
+    protected abstract fun prepare(target: View, animatorSet: AnimatorSet)
 
     fun start() {
         reset(target)
-        prepare(target)
-        animate()
-    }
-
-    fun restart() {
-        animatorSet = animatorSet.clone()
+        prepare(target, animatorSet)
         animate()
     }
 
     private fun reset(target: View) {
-        target.alpha = 1.0f
-        target.scaleX = 1.0f
-        target.scaleY = 1.0f
-        target.translationX = 0.0f
-        target.translationY = 0.0f
-        target.rotation = 0.0f
-        target.rotationX = 0.0f
-        target.rotationY = 0.0f
+        with(target){
+            alpha = 1.0f
+            scaleX = 1.0f
+            scaleY = 1.0f
+            translationX = 0.0f
+            translationY = 0.0f
+            rotation = 0.0f
+            rotationX = 0.0f
+            rotationY = 0.0f
+        }
     }
 
     private fun animate() {
@@ -47,14 +43,12 @@ abstract class BaseViewAnimator(
             }
         }
 
-        animatorSet.duration = animationParams.duration
-        animatorSet.startDelay = animationParams.startDelay
-        animatorSet.interpolator = animationParams.interpolator
-        animatorSet.start()
-    }
-
-    fun getStartDelay(): Long {
-        return animatorSet.startDelay
+        with(animatorSet){
+            duration = animationParams.duration
+            startDelay = animationParams.startDelay
+            interpolator = animationParams.interpolator
+            start()
+        }
     }
 
     fun addAnimatorListener(l: Animator.AnimatorListener) {
@@ -65,24 +59,12 @@ abstract class BaseViewAnimator(
         animatorSet.cancel()
     }
 
-    fun isRunning(): Boolean {
-        return animatorSet.isRunning
-    }
-
-    fun isStarted(): Boolean {
-        return animatorSet.isStarted
-    }
-
     fun removeAnimatorListener(l: Animator.AnimatorListener) {
         animatorSet.removeListener(l)
     }
 
     fun removeAllListener() {
         animatorSet.removeAllListeners()
-    }
-
-    fun getDuration(): Long {
-        return animationParams.duration
     }
 
     fun getAnimatorSet(): AnimatorSet {

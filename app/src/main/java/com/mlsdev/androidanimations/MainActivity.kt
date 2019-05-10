@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun onItemClick(item: String){
         val animationParams = AnimationParams(
-            repeatTimes = ValueAnimator.INFINITE
+            repeatTimes = ValueAnimator.INFINITE,
+            duration = 1000L
         )
 
         animation?.cancel()
