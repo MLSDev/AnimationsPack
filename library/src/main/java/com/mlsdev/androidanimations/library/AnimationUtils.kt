@@ -2,6 +2,8 @@ package com.mlsdev.androidanimations.library
 
 import android.view.View
 import com.mlsdev.androidanimations.library.attentionseeker.*
+import com.mlsdev.androidanimations.library.bounce.BounceInAnimator
+import com.mlsdev.androidanimations.library.bounce.BounceInDownAnimator
 import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
@@ -22,6 +24,11 @@ class AnimationUtils {
             TadaAnimator::class.java.simpleName,
             WobbleAnimator::class.java.simpleName,
             HeartbeatAnimator::class.java.simpleName,
+
+            BounceInAnimator::class.java.simpleName,
+            BounceInDownAnimator::class.java.simpleName,
+
+
             ZoomOutAnimator::class.java.simpleName,
             ZoomOutDownAnimator::class.java.simpleName,
             ZoomInAnimator::class.java.simpleName,
@@ -71,6 +78,14 @@ class AnimationUtils {
                 HeartbeatAnimator::class.java.simpleName -> {
                     HeartbeatAnimator(view, animationParams)
                 }
+
+                BounceInAnimator::class.java.simpleName -> {
+                    BounceInAnimator(view, animationParams)
+                }
+                BounceInDownAnimator::class.java.simpleName -> {
+                    BounceInDownAnimator(view, animationParams)
+                }
+
                 ZoomOutAnimator::class.java.simpleName -> {
                     ZoomOutAnimator(view, animationParams)
                 }
