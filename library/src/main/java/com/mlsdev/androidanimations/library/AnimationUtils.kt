@@ -4,6 +4,8 @@ import android.view.View
 import com.mlsdev.androidanimations.library.attentionseeker.*
 import com.mlsdev.androidanimations.library.bounce.`in`.*
 import com.mlsdev.androidanimations.library.bounce.out.*
+import com.mlsdev.androidanimations.library.fade.`in`.*
+import com.mlsdev.androidanimations.library.fade.out.*
 import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
@@ -36,6 +38,26 @@ class AnimationUtils {
             BounceOutLeftAnimator::class.java.simpleName,
             BounceOutRightAnimator::class.java.simpleName,
             BounceOutUpAnimator::class.java.simpleName,
+
+            FadeInAnimator::class.java.simpleName,
+            FadeInDownAnimator::class.java.simpleName,
+            FadeInDownBigAnimator::class.java.simpleName,
+            FadeInLeftAnimator::class.java.simpleName,
+            FadeInLeftBigAnimator::class.java.simpleName,
+            FadeInRightAnimator::class.java.simpleName,
+            FadeInRightBigAnimator::class.java.simpleName,
+            FadeInUpAnimator::class.java.simpleName,
+            FadeInUpBigAnimator::class.java.simpleName,
+
+            FadeOutAnimator::class.java.simpleName,
+            FadeOutDownAnimator::class.java.simpleName,
+            FadeOutDownBigAnimator::class.java.simpleName,
+            FadeOutLeftAnimator::class.java.simpleName,
+            FadeOutLeftBigAnimator::class.java.simpleName,
+            FadeOutRightAnimator::class.java.simpleName,
+            FadeOutRightBigAnimator::class.java.simpleName,
+            FadeOutUpAnimator::class.java.simpleName,
+            FadeOutUpBigAnimator::class.java.simpleName,
 
 
             ZoomOutAnimator::class.java.simpleName,
@@ -122,6 +144,64 @@ class AnimationUtils {
                 }
                 BounceOutUpAnimator::class.java.simpleName -> {
                     BounceOutUpAnimator(view, animationParams)
+                }
+
+                //fade in
+                FadeInAnimator::class.java.simpleName -> {
+                    FadeInAnimator(view, animationParams)
+                }
+                FadeInDownAnimator::class.java.simpleName -> {
+                    FadeInDownAnimator(view, animationParams)
+                }
+                FadeInDownBigAnimator::class.java.simpleName -> {
+                    FadeInDownBigAnimator(view, animationParams)
+                }
+                FadeInLeftAnimator::class.java.simpleName -> {
+                    FadeInLeftAnimator(view, animationParams)
+                }
+                FadeInLeftBigAnimator::class.java.simpleName -> {
+                    FadeInLeftBigAnimator(view, animationParams)
+                }
+                FadeInRightAnimator::class.java.simpleName -> {
+                    FadeInRightAnimator(view, animationParams)
+                }
+                FadeInRightBigAnimator::class.java.simpleName -> {
+                    FadeInRightBigAnimator(view, animationParams)
+                }
+                FadeInUpAnimator::class.java.simpleName -> {
+                    FadeInUpAnimator(view, animationParams)
+                }
+                FadeInUpBigAnimator::class.java.simpleName -> {
+                    FadeInUpBigAnimator(view, animationParams)
+                }
+
+                //fade out
+                FadeOutAnimator::class.java.simpleName -> {
+                    FadeOutAnimator(view, animationParams)
+                }
+                FadeOutDownAnimator::class.java.simpleName -> {
+                    FadeOutDownAnimator(view, animationParams)
+                }
+                FadeOutDownBigAnimator::class.java.simpleName ->{
+                    FadeOutDownBigAnimator(view, animationParams)
+                }
+                FadeOutLeftAnimator::class.java.simpleName -> {
+                    FadeOutLeftAnimator(view, animationParams)
+                }
+                FadeOutLeftBigAnimator::class.java.simpleName -> {
+                    FadeOutLeftBigAnimator(view, animationParams)
+                }
+                FadeOutRightAnimator::class.java.simpleName -> {
+                    FadeOutRightAnimator(view, animationParams)
+                }
+                FadeOutRightBigAnimator::class.java.simpleName -> {
+                    FadeOutRightBigAnimator(view, animationParams)
+                }
+                FadeOutUpAnimator::class.java.simpleName -> {
+                    FadeOutUpAnimator(view, animationParams)
+                }
+                FadeOutUpBigAnimator::class.java.simpleName -> {
+                    FadeOutUpBigAnimator(view, animationParams)
                 }
 
                 //zoom
