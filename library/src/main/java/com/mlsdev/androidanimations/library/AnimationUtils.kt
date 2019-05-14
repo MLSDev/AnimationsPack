@@ -6,6 +6,7 @@ import com.mlsdev.androidanimations.library.bounce.`in`.*
 import com.mlsdev.androidanimations.library.bounce.out.*
 import com.mlsdev.androidanimations.library.fade.`in`.*
 import com.mlsdev.androidanimations.library.fade.out.*
+import com.mlsdev.androidanimations.library.flipper.*
 import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
@@ -59,6 +60,11 @@ class AnimationUtils {
             FadeOutUpAnimator::class.java.simpleName,
             FadeOutUpBigAnimator::class.java.simpleName,
 
+            FlipAnimator::class.java.simpleName,
+            FlipInXAnimator::class.java.simpleName,
+            FlipInYAnimator::class.java.simpleName,
+            FlipOutXAnimator::class.java.simpleName,
+            FlipOutYAnimator::class.java.simpleName,
 
             ZoomOutAnimator::class.java.simpleName,
             ZoomOutDownAnimator::class.java.simpleName,
@@ -202,6 +208,23 @@ class AnimationUtils {
                 }
                 FadeOutUpBigAnimator::class.java.simpleName -> {
                     FadeOutUpBigAnimator(view, animationParams)
+                }
+
+                //flippers
+                FlipAnimator::class.java.simpleName -> {
+                    FlipAnimator(view, animationParams)
+                }
+                FlipInXAnimator::class.java.simpleName -> {
+                    FlipInXAnimator(view, animationParams)
+                }
+                FlipInYAnimator::class.java.simpleName -> {
+                    FlipInYAnimator(view, animationParams)
+                }
+                FlipOutXAnimator::class.java.simpleName -> {
+                    FlipOutXAnimator(view, animationParams)
+                }
+                FlipOutYAnimator::class.java.simpleName -> {
+                    FlipOutYAnimator(view, animationParams)
                 }
 
                 //zoom
