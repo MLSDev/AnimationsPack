@@ -7,6 +7,8 @@ import com.mlsdev.androidanimations.library.bounce.out.*
 import com.mlsdev.androidanimations.library.fade.`in`.*
 import com.mlsdev.androidanimations.library.fade.out.*
 import com.mlsdev.androidanimations.library.flipper.*
+import com.mlsdev.androidanimations.library.rotate.`in`.*
+import com.mlsdev.androidanimations.library.rotate.out.*
 import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
@@ -65,6 +67,19 @@ class AnimationUtils {
             FlipInYAnimator::class.java.simpleName,
             FlipOutXAnimator::class.java.simpleName,
             FlipOutYAnimator::class.java.simpleName,
+
+            RotateInAnimator::class.java.simpleName,
+            RotateInDownLeftAnimator::class.java.simpleName,
+            RotateInDownRightAnimator::class.java.simpleName,
+            RotateInUpLeftAnimator::class.java.simpleName,
+            RotateInUpRightAnimator::class.java.simpleName,
+
+            RotateOutAnimator::class.java.simpleName,
+            RotateOutDownLeftAnimator::class.java.simpleName,
+            RotateOutDownRightAnimator::class.java.simpleName,
+            RotateOutUpLeftAnimator::class.java.simpleName,
+            RotateOutUpRightAnimator::class.java.simpleName,
+
 
             ZoomOutAnimator::class.java.simpleName,
             ZoomOutDownAnimator::class.java.simpleName,
@@ -225,6 +240,38 @@ class AnimationUtils {
                 }
                 FlipOutYAnimator::class.java.simpleName -> {
                     FlipOutYAnimator(view, animationParams)
+                }
+
+                //rotate
+                RotateInAnimator::class.java.simpleName -> {
+                    RotateInAnimator(view, animationParams)
+                }
+                RotateInDownLeftAnimator::class.java.simpleName -> {
+                    RotateInDownLeftAnimator(view, animationParams)
+                }
+                RotateInDownRightAnimator::class.java.simpleName -> {
+                    RotateInDownRightAnimator(view, animationParams)
+                }
+                RotateInUpLeftAnimator::class.java.simpleName -> {
+                    RotateInUpLeftAnimator(view, animationParams)
+                }
+                RotateInUpRightAnimator::class.java.simpleName -> {
+                    RotateInUpRightAnimator(view, animationParams)
+                }
+                RotateOutAnimator::class.java.simpleName -> {
+                    RotateOutAnimator(view, animationParams)
+                }
+                RotateOutDownLeftAnimator::class.java.simpleName -> {
+                    RotateOutDownLeftAnimator(view, animationParams)
+                }
+                RotateOutDownRightAnimator::class.java.simpleName -> {
+                    RotateOutDownRightAnimator(view, animationParams)
+                }
+                RotateOutUpLeftAnimator::class.java.simpleName -> {
+                    RotateOutUpLeftAnimator(view, animationParams)
+                }
+                RotateOutUpRightAnimator::class.java.simpleName -> {
+                    RotateOutUpRightAnimator(view, animationParams)
                 }
 
                 //zoom

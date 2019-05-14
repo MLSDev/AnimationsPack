@@ -32,6 +32,8 @@ abstract class BaseViewAnimator(
             rotation = 0.0f
             rotationX = 0.0f
             rotationY = 0.0f
+            pivotX = (target.width / 2).toFloat()
+            pivotY = (target.height / 2).toFloat()
         }
     }
 
