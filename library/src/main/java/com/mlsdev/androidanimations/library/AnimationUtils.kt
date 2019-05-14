@@ -2,8 +2,8 @@ package com.mlsdev.androidanimations.library
 
 import android.view.View
 import com.mlsdev.androidanimations.library.attentionseeker.*
-import com.mlsdev.androidanimations.library.bounce.BounceInAnimator
-import com.mlsdev.androidanimations.library.bounce.BounceInDownAnimator
+import com.mlsdev.androidanimations.library.bounce.`in`.*
+import com.mlsdev.androidanimations.library.bounce.out.*
 import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
@@ -27,6 +27,15 @@ class AnimationUtils {
 
             BounceInAnimator::class.java.simpleName,
             BounceInDownAnimator::class.java.simpleName,
+            BounceInLeftAnimator::class.java.simpleName,
+            BounceInRightAnimator::class.java.simpleName,
+            BounceInUpAnimator::class.java.simpleName,
+
+            BounceOutAnimator::class.java.simpleName,
+            BounceOutDownAnimator::class.java.simpleName,
+            BounceOutLeftAnimator::class.java.simpleName,
+            BounceOutRightAnimator::class.java.simpleName,
+            BounceOutUpAnimator::class.java.simpleName,
 
 
             ZoomOutAnimator::class.java.simpleName,
@@ -51,6 +60,7 @@ class AnimationUtils {
             animationParams: AnimationParams = AnimationParams()
         ): BaseViewAnimator {
             return when (name) {
+                //attention
                 BounceAnimator::class.java.simpleName -> {
                     BounceAnimator(view, animationParams)
                 }
@@ -79,13 +89,42 @@ class AnimationUtils {
                     HeartbeatAnimator(view, animationParams)
                 }
 
+                //bounce in
                 BounceInAnimator::class.java.simpleName -> {
                     BounceInAnimator(view, animationParams)
                 }
                 BounceInDownAnimator::class.java.simpleName -> {
                     BounceInDownAnimator(view, animationParams)
                 }
+                BounceInLeftAnimator::class.java.simpleName -> {
+                    BounceInLeftAnimator(view, animationParams)
+                }
+                BounceInRightAnimator::class.java.simpleName -> {
+                    BounceInRightAnimator(view, animationParams)
+                }
 
+                BounceInUpAnimator::class.java.simpleName -> {
+                    BounceInUpAnimator(view, animationParams)
+                }
+
+                //bounce out
+                BounceOutAnimator::class.java.simpleName -> {
+                    BounceOutAnimator(view, animationParams)
+                }
+                BounceOutDownAnimator::class.java.simpleName -> {
+                    BounceOutDownAnimator(view, animationParams)
+                }
+                BounceOutLeftAnimator::class.java.simpleName -> {
+                    BounceOutLeftAnimator(view, animationParams)
+                }
+                BounceOutRightAnimator::class.java.simpleName -> {
+                    BounceOutRightAnimator(view, animationParams)
+                }
+                BounceOutUpAnimator::class.java.simpleName -> {
+                    BounceOutUpAnimator(view, animationParams)
+                }
+
+                //zoom
                 ZoomOutAnimator::class.java.simpleName -> {
                     ZoomOutAnimator(view, animationParams)
                 }
@@ -116,6 +155,7 @@ class AnimationUtils {
                 ZoomInUpAnimator::class.java.simpleName -> {
                     ZoomInUpAnimator(view, animationParams)
                 }
+                //slider
                 SlideInDownAnimator::class.java.simpleName -> {
                     SlideInDownAnimator(view, animationParams)
                 }

@@ -1,4 +1,4 @@
-package com.mlsdev.androidanimations.library.bounce
+package com.mlsdev.androidanimations.library.bounce.`in`
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
