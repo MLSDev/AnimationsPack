@@ -9,10 +9,14 @@ import com.mlsdev.androidanimations.library.fade.out.*
 import com.mlsdev.androidanimations.library.flipper.*
 import com.mlsdev.androidanimations.library.rotate.`in`.*
 import com.mlsdev.androidanimations.library.rotate.out.*
-import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
-import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
-import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
-import com.mlsdev.androidanimations.library.slider.`in`.SlideInUpAnimator
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInDownAnim
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnim
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnim
+import com.mlsdev.androidanimations.library.slider.`in`.SlideInUpAnim
+import com.mlsdev.androidanimations.library.slider.out.SlideOutDownAnim
+import com.mlsdev.androidanimations.library.slider.out.SlideOutLeftAnim
+import com.mlsdev.androidanimations.library.slider.out.SlideOutRightAnim
+import com.mlsdev.androidanimations.library.slider.out.SlideOutUpAnim
 import com.mlsdev.androidanimations.library.special.HingeAnim
 import com.mlsdev.androidanimations.library.special.JackInTheBoxAnim
 import com.mlsdev.androidanimations.library.special.RollInAnim
@@ -86,26 +90,32 @@ class AnimationUtils {
             RotateOutUpRightAnim::class.java.simpleName,
             RotateOutScaleAnim::class.java.simpleName,
 
+
+            SlideInUpAnim::class.java.simpleName,
+            SlideInDownAnim::class.java.simpleName,
+            SlideInLeftAnim::class.java.simpleName,
+            SlideInRightAnim::class.java.simpleName,
+
+            SlideOutUpAnim::class.java.simpleName,
+            SlideOutDownAnim::class.java.simpleName,
+            SlideOutLeftAnim::class.java.simpleName,
+            SlideOutRightAnim::class.java.simpleName,
+
+            ZoomInAnim::class.java.simpleName,
+            ZoomInDownAnim::class.java.simpleName,
+            ZoomInLeftAnim::class.java.simpleName,
+            ZoomInRightAnim::class.java.simpleName,
+            ZoomInUpAnim::class.java.simpleName,
+            ZoomOutAnim::class.java.simpleName,
+            ZoomOutDownAnim::class.java.simpleName,
+            ZoomOutLeftAnim::class.java.simpleName,
+            ZoomOutRightAnim::class.java.simpleName,
+            ZoomOutUpAnim::class.java.simpleName,
+
             HingeAnim::class.java.simpleName,
             JackInTheBoxAnim::class.java.simpleName,
             RollInAnim::class.java.simpleName,
-            RollOutAnim::class.java.simpleName,
-
-
-            ZoomOutAnimator::class.java.simpleName,
-            ZoomOutDownAnimator::class.java.simpleName,
-            ZoomInAnimator::class.java.simpleName,
-            ZoomOutLeftAnimator::class.java.simpleName,
-            ZoomOutUpAnimator::class.java.simpleName,
-            ZoomOutRightAnimator::class.java.simpleName,
-            ZoomInDownAnimator::class.java.simpleName,
-            ZoomInLeftAnimator::class.java.simpleName,
-            ZoomInRightAnimator::class.java.simpleName,
-            ZoomInUpAnimator::class.java.simpleName,
-            SlideInDownAnimator::class.java.simpleName,
-            SlideInLeftAnimator::class.java.simpleName,
-            SlideInRightAnimator::class.java.simpleName,
-            SlideInUpAnimator::class.java.simpleName
+            RollOutAnim::class.java.simpleName
         )
 
         fun getAnimation(
@@ -307,48 +317,60 @@ class AnimationUtils {
                 }
 
                 //zoom
-                ZoomOutAnimator::class.java.simpleName -> {
-                    ZoomOutAnimator(view, animationParams)
+                ZoomOutAnim::class.java.simpleName -> {
+                    ZoomOutAnim(view, animationParams)
                 }
-                ZoomOutDownAnimator::class.java.simpleName -> {
-                    ZoomOutDownAnimator(view, animationParams)
+                ZoomOutDownAnim::class.java.simpleName -> {
+                    ZoomOutDownAnim(view, animationParams)
                 }
-                ZoomInAnimator::class.java.simpleName -> {
-                    ZoomInAnimator(view, animationParams)
+                ZoomInAnim::class.java.simpleName -> {
+                    ZoomInAnim(view, animationParams)
                 }
-                ZoomOutLeftAnimator::class.java.simpleName -> {
-                    ZoomOutLeftAnimator(view, animationParams)
+                ZoomOutLeftAnim::class.java.simpleName -> {
+                    ZoomOutLeftAnim(view, animationParams)
                 }
-                ZoomOutUpAnimator::class.java.simpleName -> {
-                    ZoomOutUpAnimator(view, animationParams)
+                ZoomOutUpAnim::class.java.simpleName -> {
+                    ZoomOutUpAnim(view, animationParams)
                 }
-                ZoomOutRightAnimator::class.java.simpleName -> {
-                    ZoomOutRightAnimator(view, animationParams)
+                ZoomOutRightAnim::class.java.simpleName -> {
+                    ZoomOutRightAnim(view, animationParams)
                 }
-                ZoomInDownAnimator::class.java.simpleName -> {
-                    ZoomInDownAnimator(view, animationParams)
+                ZoomInDownAnim::class.java.simpleName -> {
+                    ZoomInDownAnim(view, animationParams)
                 }
-                ZoomInLeftAnimator::class.java.simpleName -> {
-                    ZoomInLeftAnimator(view, animationParams)
+                ZoomInLeftAnim::class.java.simpleName -> {
+                    ZoomInLeftAnim(view, animationParams)
                 }
-                ZoomInRightAnimator::class.java.simpleName -> {
-                    ZoomInRightAnimator(view, animationParams)
+                ZoomInRightAnim::class.java.simpleName -> {
+                    ZoomInRightAnim(view, animationParams)
                 }
-                ZoomInUpAnimator::class.java.simpleName -> {
-                    ZoomInUpAnimator(view, animationParams)
+                ZoomInUpAnim::class.java.simpleName -> {
+                    ZoomInUpAnim(view, animationParams)
                 }
                 //slider
-                SlideInDownAnimator::class.java.simpleName -> {
-                    SlideInDownAnimator(view, animationParams)
+                SlideInDownAnim::class.java.simpleName -> {
+                    SlideInDownAnim(view, animationParams)
                 }
-                SlideInLeftAnimator::class.java.simpleName -> {
-                    SlideInLeftAnimator(view, animationParams)
+                SlideInLeftAnim::class.java.simpleName -> {
+                    SlideInLeftAnim(view, animationParams)
                 }
-                SlideInRightAnimator::class.java.simpleName -> {
-                    SlideInRightAnimator(view, animationParams)
+                SlideInRightAnim::class.java.simpleName -> {
+                    SlideInRightAnim(view, animationParams)
                 }
-                SlideInUpAnimator::class.java.simpleName -> {
-                    SlideInUpAnimator(view, animationParams)
+                SlideInUpAnim::class.java.simpleName -> {
+                    SlideInUpAnim(view, animationParams)
+                }
+                SlideOutDownAnim::class.java.simpleName -> {
+                    SlideOutDownAnim(view, animationParams)
+                }
+                SlideOutLeftAnim::class.java.simpleName -> {
+                    SlideOutLeftAnim(view, animationParams)
+                }
+                SlideOutRightAnim::class.java.simpleName -> {
+                    SlideOutRightAnim(view, animationParams)
+                }
+                SlideOutUpAnim::class.java.simpleName -> {
+                    SlideOutUpAnim(view, animationParams)
                 }
                 else -> {
                     throw RuntimeException("Unknown animation name")

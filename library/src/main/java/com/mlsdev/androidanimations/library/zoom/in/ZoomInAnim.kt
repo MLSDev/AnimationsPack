@@ -6,7 +6,7 @@ import android.view.View
 import com.mlsdev.androidanimations.library.AnimationParams
 import com.mlsdev.androidanimations.library.BaseViewAnim
 
-class ZoomInAnimator(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnim(view, animationParams) {
+class ZoomInAnim(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnim(view, animationParams) {
     override fun prepare(target: View, animatorSet: AnimatorSet) {
         animatorSet.playTogether(
             ObjectAnimator.ofFloat(target, "scaleX", 0.3f, 1.0f),

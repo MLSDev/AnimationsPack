@@ -6,7 +6,7 @@ import android.view.View
 import com.mlsdev.androidanimations.library.AnimationParams
 import com.mlsdev.androidanimations.library.BaseViewAnim
 
-class ZoomOutAnimator(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnim(view, animationParams) {
+class ZoomOutAnim(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnim(view, animationParams) {
     override fun prepare(target: View, animatorSet: AnimatorSet) {
         animatorSet.playTogether(
             ObjectAnimator.ofFloat(target, "alpha", 1.0f, 0.0f, 0.0f),
