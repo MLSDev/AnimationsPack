@@ -13,6 +13,10 @@ import com.mlsdev.androidanimations.library.slider.SlideInDownAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInLeftAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInRightAnimator
 import com.mlsdev.androidanimations.library.slider.`in`.SlideInUpAnimator
+import com.mlsdev.androidanimations.library.special.HingeAnim
+import com.mlsdev.androidanimations.library.special.JackInTheBoxAnim
+import com.mlsdev.androidanimations.library.special.RollInAnim
+import com.mlsdev.androidanimations.library.special.RollOutAnim
 import com.mlsdev.androidanimations.library.zoom.`in`.*
 import com.mlsdev.androidanimations.library.zoom.out.*
 import java.lang.RuntimeException
@@ -20,65 +24,72 @@ import java.lang.RuntimeException
 class AnimationUtils {
     companion object {
         val animationNames = mutableListOf(
-            BounceAnimator::class.java.simpleName,
-            FlashAnimator::class.java.simpleName,
-            PulseAnimator::class.java.simpleName,
-            RubberBandAnimator::class.java.simpleName,
-            ShakeAnimator::class.java.simpleName,
-            SwingAnimator::class.java.simpleName,
-            TadaAnimator::class.java.simpleName,
-            WobbleAnimator::class.java.simpleName,
-            HeartbeatAnimator::class.java.simpleName,
+            BounceAnim::class.java.simpleName,
+            FlashAnim::class.java.simpleName,
+            PulseAnim::class.java.simpleName,
+            RubberBandAnim::class.java.simpleName,
+            ShakeAnim::class.java.simpleName,
+            SwingAnim::class.java.simpleName,
+            TadaAnim::class.java.simpleName,
+            WobbleAnim::class.java.simpleName,
+            HeartbeatAnim::class.java.simpleName,
 
-            BounceInAnimator::class.java.simpleName,
-            BounceInDownAnimator::class.java.simpleName,
-            BounceInLeftAnimator::class.java.simpleName,
-            BounceInRightAnimator::class.java.simpleName,
-            BounceInUpAnimator::class.java.simpleName,
+            BounceInAnim::class.java.simpleName,
+            BounceInDownAnim::class.java.simpleName,
+            BounceInLeftAnim::class.java.simpleName,
+            BounceInRightAnim::class.java.simpleName,
+            BounceInUpAnim::class.java.simpleName,
 
-            BounceOutAnimator::class.java.simpleName,
-            BounceOutDownAnimator::class.java.simpleName,
-            BounceOutLeftAnimator::class.java.simpleName,
-            BounceOutRightAnimator::class.java.simpleName,
-            BounceOutUpAnimator::class.java.simpleName,
+            BounceOutAnim::class.java.simpleName,
+            BounceOutDownAnim::class.java.simpleName,
+            BounceOutLeftAnim::class.java.simpleName,
+            BounceOutRightAnim::class.java.simpleName,
+            BounceOutUpAnim::class.java.simpleName,
 
-            FadeInAnimator::class.java.simpleName,
-            FadeInDownAnimator::class.java.simpleName,
-            FadeInDownBigAnimator::class.java.simpleName,
-            FadeInLeftAnimator::class.java.simpleName,
-            FadeInLeftBigAnimator::class.java.simpleName,
-            FadeInRightAnimator::class.java.simpleName,
-            FadeInRightBigAnimator::class.java.simpleName,
-            FadeInUpAnimator::class.java.simpleName,
-            FadeInUpBigAnimator::class.java.simpleName,
+            FadeInAnim::class.java.simpleName,
+            FadeInDownAnim::class.java.simpleName,
+            FadeInDownBigAnim::class.java.simpleName,
+            FadeInLeftAnim::class.java.simpleName,
+            FadeInLeftBigAnim::class.java.simpleName,
+            FadeInRightAnim::class.java.simpleName,
+            FadeInRightBigAnim::class.java.simpleName,
+            FadeInUpAnim::class.java.simpleName,
+            FadeInUpBigAnim::class.java.simpleName,
 
-            FadeOutAnimator::class.java.simpleName,
-            FadeOutDownAnimator::class.java.simpleName,
-            FadeOutDownBigAnimator::class.java.simpleName,
-            FadeOutLeftAnimator::class.java.simpleName,
-            FadeOutLeftBigAnimator::class.java.simpleName,
-            FadeOutRightAnimator::class.java.simpleName,
-            FadeOutRightBigAnimator::class.java.simpleName,
-            FadeOutUpAnimator::class.java.simpleName,
-            FadeOutUpBigAnimator::class.java.simpleName,
+            FadeOutAnim::class.java.simpleName,
+            FadeOutDownAnim::class.java.simpleName,
+            FadeOutDownBigAnim::class.java.simpleName,
+            FadeOutLeftAnim::class.java.simpleName,
+            FadeOutLeftBigAnim::class.java.simpleName,
+            FadeOutRightAnim::class.java.simpleName,
+            FadeOutRightBigAnim::class.java.simpleName,
+            FadeOutUpAnim::class.java.simpleName,
+            FadeOutUpBigAnim::class.java.simpleName,
 
-            FlipAnimator::class.java.simpleName,
-            FlipInXAnimator::class.java.simpleName,
-            FlipInYAnimator::class.java.simpleName,
-            FlipOutXAnimator::class.java.simpleName,
-            FlipOutYAnimator::class.java.simpleName,
+            FlipAnim::class.java.simpleName,
+            FlipInXAnim::class.java.simpleName,
+            FlipInYAnim::class.java.simpleName,
+            FlipOutXAnim::class.java.simpleName,
+            FlipOutYAnim::class.java.simpleName,
 
-            RotateInAnimator::class.java.simpleName,
-            RotateInDownLeftAnimator::class.java.simpleName,
-            RotateInDownRightAnimator::class.java.simpleName,
-            RotateInUpLeftAnimator::class.java.simpleName,
-            RotateInUpRightAnimator::class.java.simpleName,
+            RotateInAnim::class.java.simpleName,
+            RotateInDownLeftAnim::class.java.simpleName,
+            RotateInDownRightAnim::class.java.simpleName,
+            RotateInUpLeftAnim::class.java.simpleName,
+            RotateInUpRightAnim::class.java.simpleName,
+            RotateInScaleAnim::class.java.simpleName,
 
-            RotateOutAnimator::class.java.simpleName,
-            RotateOutDownLeftAnimator::class.java.simpleName,
-            RotateOutDownRightAnimator::class.java.simpleName,
-            RotateOutUpLeftAnimator::class.java.simpleName,
-            RotateOutUpRightAnimator::class.java.simpleName,
+            RotateOutAnim::class.java.simpleName,
+            RotateOutDownLeftAnim::class.java.simpleName,
+            RotateOutDownRightAnim::class.java.simpleName,
+            RotateOutUpLeftAnim::class.java.simpleName,
+            RotateOutUpRightAnim::class.java.simpleName,
+            RotateOutScaleAnim::class.java.simpleName,
+
+            HingeAnim::class.java.simpleName,
+            JackInTheBoxAnim::class.java.simpleName,
+            RollInAnim::class.java.simpleName,
+            RollOutAnim::class.java.simpleName,
 
 
             ZoomOutAnimator::class.java.simpleName,
@@ -101,177 +112,198 @@ class AnimationUtils {
             name: String,
             view: View,
             animationParams: AnimationParams = AnimationParams()
-        ): BaseViewAnimator {
+        ): BaseViewAnim {
             return when (name) {
                 //attention
-                BounceAnimator::class.java.simpleName -> {
-                    BounceAnimator(view, animationParams)
+                BounceAnim::class.java.simpleName -> {
+                    BounceAnim(view, animationParams)
                 }
-                FlashAnimator::class.java.simpleName -> {
-                    FlashAnimator(view, animationParams)
+                FlashAnim::class.java.simpleName -> {
+                    FlashAnim(view, animationParams)
                 }
-                PulseAnimator::class.java.simpleName -> {
-                    PulseAnimator(view, animationParams)
+                PulseAnim::class.java.simpleName -> {
+                    PulseAnim(view, animationParams)
                 }
-                RubberBandAnimator::class.java.simpleName -> {
-                    RubberBandAnimator(view, animationParams)
+                RubberBandAnim::class.java.simpleName -> {
+                    RubberBandAnim(view, animationParams)
                 }
-                ShakeAnimator::class.java.simpleName -> {
-                    ShakeAnimator(view, animationParams)
+                ShakeAnim::class.java.simpleName -> {
+                    ShakeAnim(view, animationParams)
                 }
-                SwingAnimator::class.java.simpleName -> {
-                    SwingAnimator(view, animationParams)
+                SwingAnim::class.java.simpleName -> {
+                    SwingAnim(view, animationParams)
                 }
-                TadaAnimator::class.java.simpleName -> {
-                    TadaAnimator(view, animationParams)
+                TadaAnim::class.java.simpleName -> {
+                    TadaAnim(view, animationParams)
                 }
-                WobbleAnimator::class.java.simpleName -> {
-                    WobbleAnimator(view, animationParams)
+                WobbleAnim::class.java.simpleName -> {
+                    WobbleAnim(view, animationParams)
                 }
-                HeartbeatAnimator::class.java.simpleName -> {
-                    HeartbeatAnimator(view, animationParams)
+                HeartbeatAnim::class.java.simpleName -> {
+                    HeartbeatAnim(view, animationParams)
                 }
 
                 //bounce in
-                BounceInAnimator::class.java.simpleName -> {
-                    BounceInAnimator(view, animationParams)
+                BounceInAnim::class.java.simpleName -> {
+                    BounceInAnim(view, animationParams)
                 }
-                BounceInDownAnimator::class.java.simpleName -> {
-                    BounceInDownAnimator(view, animationParams)
+                BounceInDownAnim::class.java.simpleName -> {
+                    BounceInDownAnim(view, animationParams)
                 }
-                BounceInLeftAnimator::class.java.simpleName -> {
-                    BounceInLeftAnimator(view, animationParams)
+                BounceInLeftAnim::class.java.simpleName -> {
+                    BounceInLeftAnim(view, animationParams)
                 }
-                BounceInRightAnimator::class.java.simpleName -> {
-                    BounceInRightAnimator(view, animationParams)
+                BounceInRightAnim::class.java.simpleName -> {
+                    BounceInRightAnim(view, animationParams)
                 }
 
-                BounceInUpAnimator::class.java.simpleName -> {
-                    BounceInUpAnimator(view, animationParams)
+                BounceInUpAnim::class.java.simpleName -> {
+                    BounceInUpAnim(view, animationParams)
                 }
 
                 //bounce out
-                BounceOutAnimator::class.java.simpleName -> {
-                    BounceOutAnimator(view, animationParams)
+                BounceOutAnim::class.java.simpleName -> {
+                    BounceOutAnim(view, animationParams)
                 }
-                BounceOutDownAnimator::class.java.simpleName -> {
-                    BounceOutDownAnimator(view, animationParams)
+                BounceOutDownAnim::class.java.simpleName -> {
+                    BounceOutDownAnim(view, animationParams)
                 }
-                BounceOutLeftAnimator::class.java.simpleName -> {
-                    BounceOutLeftAnimator(view, animationParams)
+                BounceOutLeftAnim::class.java.simpleName -> {
+                    BounceOutLeftAnim(view, animationParams)
                 }
-                BounceOutRightAnimator::class.java.simpleName -> {
-                    BounceOutRightAnimator(view, animationParams)
+                BounceOutRightAnim::class.java.simpleName -> {
+                    BounceOutRightAnim(view, animationParams)
                 }
-                BounceOutUpAnimator::class.java.simpleName -> {
-                    BounceOutUpAnimator(view, animationParams)
+                BounceOutUpAnim::class.java.simpleName -> {
+                    BounceOutUpAnim(view, animationParams)
                 }
 
                 //fade in
-                FadeInAnimator::class.java.simpleName -> {
-                    FadeInAnimator(view, animationParams)
+                FadeInAnim::class.java.simpleName -> {
+                    FadeInAnim(view, animationParams)
                 }
-                FadeInDownAnimator::class.java.simpleName -> {
-                    FadeInDownAnimator(view, animationParams)
+                FadeInDownAnim::class.java.simpleName -> {
+                    FadeInDownAnim(view, animationParams)
                 }
-                FadeInDownBigAnimator::class.java.simpleName -> {
-                    FadeInDownBigAnimator(view, animationParams)
+                FadeInDownBigAnim::class.java.simpleName -> {
+                    FadeInDownBigAnim(view, animationParams)
                 }
-                FadeInLeftAnimator::class.java.simpleName -> {
-                    FadeInLeftAnimator(view, animationParams)
+                FadeInLeftAnim::class.java.simpleName -> {
+                    FadeInLeftAnim(view, animationParams)
                 }
-                FadeInLeftBigAnimator::class.java.simpleName -> {
-                    FadeInLeftBigAnimator(view, animationParams)
+                FadeInLeftBigAnim::class.java.simpleName -> {
+                    FadeInLeftBigAnim(view, animationParams)
                 }
-                FadeInRightAnimator::class.java.simpleName -> {
-                    FadeInRightAnimator(view, animationParams)
+                FadeInRightAnim::class.java.simpleName -> {
+                    FadeInRightAnim(view, animationParams)
                 }
-                FadeInRightBigAnimator::class.java.simpleName -> {
-                    FadeInRightBigAnimator(view, animationParams)
+                FadeInRightBigAnim::class.java.simpleName -> {
+                    FadeInRightBigAnim(view, animationParams)
                 }
-                FadeInUpAnimator::class.java.simpleName -> {
-                    FadeInUpAnimator(view, animationParams)
+                FadeInUpAnim::class.java.simpleName -> {
+                    FadeInUpAnim(view, animationParams)
                 }
-                FadeInUpBigAnimator::class.java.simpleName -> {
-                    FadeInUpBigAnimator(view, animationParams)
+                FadeInUpBigAnim::class.java.simpleName -> {
+                    FadeInUpBigAnim(view, animationParams)
                 }
 
                 //fade out
-                FadeOutAnimator::class.java.simpleName -> {
-                    FadeOutAnimator(view, animationParams)
+                FadeOutAnim::class.java.simpleName -> {
+                    FadeOutAnim(view, animationParams)
                 }
-                FadeOutDownAnimator::class.java.simpleName -> {
-                    FadeOutDownAnimator(view, animationParams)
+                FadeOutDownAnim::class.java.simpleName -> {
+                    FadeOutDownAnim(view, animationParams)
                 }
-                FadeOutDownBigAnimator::class.java.simpleName ->{
-                    FadeOutDownBigAnimator(view, animationParams)
+                FadeOutDownBigAnim::class.java.simpleName ->{
+                    FadeOutDownBigAnim(view, animationParams)
                 }
-                FadeOutLeftAnimator::class.java.simpleName -> {
-                    FadeOutLeftAnimator(view, animationParams)
+                FadeOutLeftAnim::class.java.simpleName -> {
+                    FadeOutLeftAnim(view, animationParams)
                 }
-                FadeOutLeftBigAnimator::class.java.simpleName -> {
-                    FadeOutLeftBigAnimator(view, animationParams)
+                FadeOutLeftBigAnim::class.java.simpleName -> {
+                    FadeOutLeftBigAnim(view, animationParams)
                 }
-                FadeOutRightAnimator::class.java.simpleName -> {
-                    FadeOutRightAnimator(view, animationParams)
+                FadeOutRightAnim::class.java.simpleName -> {
+                    FadeOutRightAnim(view, animationParams)
                 }
-                FadeOutRightBigAnimator::class.java.simpleName -> {
-                    FadeOutRightBigAnimator(view, animationParams)
+                FadeOutRightBigAnim::class.java.simpleName -> {
+                    FadeOutRightBigAnim(view, animationParams)
                 }
-                FadeOutUpAnimator::class.java.simpleName -> {
-                    FadeOutUpAnimator(view, animationParams)
+                FadeOutUpAnim::class.java.simpleName -> {
+                    FadeOutUpAnim(view, animationParams)
                 }
-                FadeOutUpBigAnimator::class.java.simpleName -> {
-                    FadeOutUpBigAnimator(view, animationParams)
+                FadeOutUpBigAnim::class.java.simpleName -> {
+                    FadeOutUpBigAnim(view, animationParams)
                 }
 
                 //flippers
-                FlipAnimator::class.java.simpleName -> {
-                    FlipAnimator(view, animationParams)
+                FlipAnim::class.java.simpleName -> {
+                    FlipAnim(view, animationParams)
                 }
-                FlipInXAnimator::class.java.simpleName -> {
-                    FlipInXAnimator(view, animationParams)
+                FlipInXAnim::class.java.simpleName -> {
+                    FlipInXAnim(view, animationParams)
                 }
-                FlipInYAnimator::class.java.simpleName -> {
-                    FlipInYAnimator(view, animationParams)
+                FlipInYAnim::class.java.simpleName -> {
+                    FlipInYAnim(view, animationParams)
                 }
-                FlipOutXAnimator::class.java.simpleName -> {
-                    FlipOutXAnimator(view, animationParams)
+                FlipOutXAnim::class.java.simpleName -> {
+                    FlipOutXAnim(view, animationParams)
                 }
-                FlipOutYAnimator::class.java.simpleName -> {
-                    FlipOutYAnimator(view, animationParams)
+                FlipOutYAnim::class.java.simpleName -> {
+                    FlipOutYAnim(view, animationParams)
                 }
 
                 //rotate
-                RotateInAnimator::class.java.simpleName -> {
-                    RotateInAnimator(view, animationParams)
+                RotateInAnim::class.java.simpleName -> {
+                    RotateInAnim(view, animationParams)
                 }
-                RotateInDownLeftAnimator::class.java.simpleName -> {
-                    RotateInDownLeftAnimator(view, animationParams)
+                RotateInDownLeftAnim::class.java.simpleName -> {
+                    RotateInDownLeftAnim(view, animationParams)
                 }
-                RotateInDownRightAnimator::class.java.simpleName -> {
-                    RotateInDownRightAnimator(view, animationParams)
+                RotateInDownRightAnim::class.java.simpleName -> {
+                    RotateInDownRightAnim(view, animationParams)
                 }
-                RotateInUpLeftAnimator::class.java.simpleName -> {
-                    RotateInUpLeftAnimator(view, animationParams)
+                RotateInUpLeftAnim::class.java.simpleName -> {
+                    RotateInUpLeftAnim(view, animationParams)
                 }
-                RotateInUpRightAnimator::class.java.simpleName -> {
-                    RotateInUpRightAnimator(view, animationParams)
+                RotateInUpRightAnim::class.java.simpleName -> {
+                    RotateInUpRightAnim(view, animationParams)
                 }
-                RotateOutAnimator::class.java.simpleName -> {
-                    RotateOutAnimator(view, animationParams)
+                RotateOutAnim::class.java.simpleName -> {
+                    RotateOutAnim(view, animationParams)
                 }
-                RotateOutDownLeftAnimator::class.java.simpleName -> {
-                    RotateOutDownLeftAnimator(view, animationParams)
+                RotateOutDownLeftAnim::class.java.simpleName -> {
+                    RotateOutDownLeftAnim(view, animationParams)
                 }
-                RotateOutDownRightAnimator::class.java.simpleName -> {
-                    RotateOutDownRightAnimator(view, animationParams)
+                RotateOutDownRightAnim::class.java.simpleName -> {
+                    RotateOutDownRightAnim(view, animationParams)
                 }
-                RotateOutUpLeftAnimator::class.java.simpleName -> {
-                    RotateOutUpLeftAnimator(view, animationParams)
+                RotateOutUpLeftAnim::class.java.simpleName -> {
+                    RotateOutUpLeftAnim(view, animationParams)
                 }
-                RotateOutUpRightAnimator::class.java.simpleName -> {
-                    RotateOutUpRightAnimator(view, animationParams)
+                RotateOutUpRightAnim::class.java.simpleName -> {
+                    RotateOutUpRightAnim(view, animationParams)
+                }
+                RotateInScaleAnim::class.java.simpleName -> {
+                    RotateInScaleAnim(view, animationParams)
+                }
+                RotateOutScaleAnim::class.java.simpleName -> {
+                    RotateOutScaleAnim(view, animationParams)
+                }
+
+                //special
+                HingeAnim::class.java.simpleName -> {
+                    HingeAnim(view, animationParams)
+                }
+                JackInTheBoxAnim::class.java.simpleName -> {
+                    JackInTheBoxAnim(view, animationParams)
+                }
+
+                RollInAnim::class.java.simpleName -> {
+                    RollInAnim(view, animationParams)
+                }
+                RollOutAnim::class.java.simpleName -> {
+                    RollOutAnim(view, animationParams)
                 }
 
                 //zoom

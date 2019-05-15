@@ -4,9 +4,9 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.view.View
 import com.mlsdev.androidanimations.library.AnimationParams
-import com.mlsdev.androidanimations.library.BaseViewAnimator
+import com.mlsdev.androidanimations.library.BaseViewAnim
 
-class ZoomInRightAnimator(view: View, animationParams: AnimationParams) : BaseViewAnimator(view, animationParams) {
+class ZoomInRightAnimator(view: View, animationParams: AnimationParams) : BaseViewAnim(view, animationParams) {
     override fun prepare(target: View, animatorSet: AnimatorSet) {
         animatorSet.playTogether(
             ObjectAnimator.ofFloat(target, "scaleX", 0.1f, 0.475f, 1.0f),

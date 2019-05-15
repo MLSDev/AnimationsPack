@@ -1,19 +1,17 @@
 package com.mlsdev.androidanimations
 
-import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mlsdev.androidanimations.library.AnimationParams
 import com.mlsdev.androidanimations.library.AnimationUtils
-import com.mlsdev.androidanimations.library.BaseViewAnimator
+import com.mlsdev.androidanimations.library.BaseViewAnim
 
 class MainActivity : AppCompatActivity() {
     private lateinit var animationView: View
-    private var animation: BaseViewAnimator? = null
+    private var animation: BaseViewAnim? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

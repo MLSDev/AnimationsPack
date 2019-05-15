@@ -2,14 +2,13 @@ package com.mlsdev.androidanimations.library.zoom.out
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.graphics.Path
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.animation.PathInterpolatorCompat
 import com.mlsdev.androidanimations.library.AnimationParams
-import com.mlsdev.androidanimations.library.BaseViewAnimator
+import com.mlsdev.androidanimations.library.BaseViewAnim
 
-class ZoomOutDownAnimator(view: View, animationParams: AnimationParams) : BaseViewAnimator(view, animationParams) {
+class ZoomOutDownAnimator(view: View, animationParams: AnimationParams) : BaseViewAnim(view, animationParams) {
     init {
         animationParams.interpolator = PathInterpolatorCompat.create(0.55f, 0.055f, 0.675f, 0.19f)
     }

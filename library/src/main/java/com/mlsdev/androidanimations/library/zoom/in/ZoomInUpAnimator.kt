@@ -5,9 +5,9 @@ import android.animation.ObjectAnimator
 import android.view.View
 import android.view.ViewGroup
 import com.mlsdev.androidanimations.library.AnimationParams
-import com.mlsdev.androidanimations.library.BaseViewAnimator
+import com.mlsdev.androidanimations.library.BaseViewAnim
 
-class ZoomInUpAnimator(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnimator(view, animationParams) {
+class ZoomInUpAnimator(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnim(view, animationParams) {
     override fun prepare(target: View, animatorSet: AnimatorSet) {
         val parent = target.parent as ViewGroup
         val distance = (parent.height - target.top).toFloat()

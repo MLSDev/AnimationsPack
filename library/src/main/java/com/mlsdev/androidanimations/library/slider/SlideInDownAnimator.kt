@@ -4,9 +4,9 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.view.View
 import com.mlsdev.androidanimations.library.AnimationParams
-import com.mlsdev.androidanimations.library.BaseViewAnimator
+import com.mlsdev.androidanimations.library.BaseViewAnim
 
-class SlideInDownAnimator(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnimator(view, animationParams) {
+class SlideInDownAnimator(view: View, animationParams: AnimationParams = AnimationParams()) : BaseViewAnim(view, animationParams) {
     override fun prepare(target: View, animatorSet: AnimatorSet) {
         val distance = (target.top + target.height).toFloat()
         animatorSet.playTogether(

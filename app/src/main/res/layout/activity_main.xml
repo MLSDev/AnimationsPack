@@ -6,10 +6,11 @@
     android:paddingEnd="16dp"
     android:paddingBottom="16dp">
 
-    <FrameLayout
-        android:id="@+id/frame"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/hello_world" />
 
         <TextView
             android:id="@+id/hello_world"
@@ -17,15 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
+            android:layout_centerHorizontal="true"
             android:padding="36dp"
             android:text="Hello world!"
             android:textSize="40sp" />
-    </FrameLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/frame" />
 </RelativeLayout>
