@@ -1,6 +1,6 @@
 # AnimationsPack
 
-Another implementation of animations inspired by animate.css and 
+Another implementation of animations inspired by [animate.css](https://github.com/daneden/animate.css) and [AndroidAnimations](https://github.com/daimajia/AndroidViewAnimations)
 
 ## Setup
 
