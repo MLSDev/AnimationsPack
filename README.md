@@ -3,10 +3,25 @@
 Another implementation of animations inspired by [animate.css](https://github.com/daneden/animate.css) and [AndroidAnimations](https://github.com/daimajia/AndroidViewAnimations)
 
 ## Setup
-
 To use this library your ` minSdkVersion` must be >= 16.
 
-// add steps to setup
+In your build.gradle :
+```gradle
+dependencies {
+    implementation 'com.mlsdev.androidanimations.library:library:1.0.0'
+}
+```
+
+## Example
+```kotlin
+val animationParams = AnimationParams(
+            repeatTimes = 0,
+            duration = 1000L
+)
+//animationName is one of AnimationUtils.animationNames
+val animation  = AnimationUtils.getAnimation(animationName, targetView, animationParams)
+animation.start()
+```
 
 ## Authors
 * [Slava Fir](mailto:fir@mlsdev.com) ([github profile][github-fir]), MLSDev 
