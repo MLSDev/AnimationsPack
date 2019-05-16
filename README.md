@@ -22,6 +22,6 @@ AnimationsPack is maintained by MLSDev, Inc. We specialize in providing all-in-o
 
 Find out more [here][mlsdev] and don't hesitate to [contact us][contact]!
 
-[mlsdev]: http://mlsdev.com
-[contact]: http://mlsdev.com/contact-us
+[mlsdev]: https://mlsdev.com
+[contact]: https://mlsdev.com/contact-us
 [github-fir]: https://github.com/SlavaFir
