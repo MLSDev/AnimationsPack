@@ -79,30 +79,6 @@ android {
     }
 }
 
-ext {
-    bintrayRepo = ''
-    bintrayName = ''
-
-    publishedGroupId =
-    libraryName = 'library'
-    artifact =
-
-    libraryDescription = ''
-
-    siteUrl = 'https://github.com/MLSDev/AnimationsPack'
-    gitUrl = ''
-
-    libraryVersion = '1.0.1'
-
-    developerId = 'slavafir'
-    developerName = 'Slava Fir'
-    developerEmail = 'fir@mlsdev.com'
-
-    licenseName = 'MIT License'
-    licenseUrl = 'https://github.com/MLSDev/AnimationsPack/blob/master/LICENSE'
-    allLicenses = []
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
