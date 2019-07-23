@@ -9,5 +9,4 @@ data class AnimationParams(
     var interpolator: Interpolator? = null,
     var repeatTimes: Int = 0,
     var repeatMode: Int = ValueAnimator.RESTART
-) {
-}
+)

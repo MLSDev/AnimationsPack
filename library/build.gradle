@@ -3,16 +3,65 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        Production(MavenPublication) {
+            artifact("$buildDir/outputs/aar/library-release.aar")
+            groupId 'com.mlsdev.androidanimations.library'
+            artifactId 'library'
+            version '1.0.1'
+
+            //The publication doesn't know about our dependencies, so we have to manually add them to the pom
+            pom.withXml {
+                //def dependenciesNode = asNode().appendNode('dependencies')
+                //Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                configurations.compile.allDependencies.each {
+                    if (it.name != 'unspecified') {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    // Get Bintray credential from environment variable
+    user = System.getenv('BINTRAY_USER') // Get bintray User
+    key = System.getenv('BINTRAY_API_KEY') // Get bintray Secret API Key
+    dryRun = false
+    override = false
+    publish = true
+    pkg {
+        repo = 'AnimationsPack'
+        name = 'AnimationsPack'
+        //userOrg = 'username' // replace with your Bintray user name
+        licenses = ["MIT"]
+        desc = 'Another implementation of animate.css'
+        vcsUrl = 'https://github.com/MLSDev/AnimationsPack.git'
+
+        version {
+            name = '1.0.1' //Bintray logical version name
+            //vcsTag = '1.0.1'
+        }
+    }
+    publications = ['Production']
+}
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -31,19 +80,19 @@ android {
 }
 
 ext {
-    bintrayRepo = 'AnimationsPack'
-    bintrayName = 'AnimationsPack'
+    bintrayRepo = ''
+    bintrayName = ''
 
-    publishedGroupId = 'com.mlsdev.androidanimations.library'
+    publishedGroupId =
     libraryName = 'library'
-    artifact = 'library'
+    artifact =
 
-    libraryDescription = 'Another implementation of animate.css'
+    libraryDescription = ''
 
     siteUrl = 'https://github.com/MLSDev/AnimationsPack'
-    gitUrl = 'https://github.com/MLSDev/AnimationsPack.git'
+    gitUrl = ''
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'slavafir'
     developerName = 'Slava Fir'
@@ -51,7 +100,7 @@ ext {
 
     licenseName = 'MIT License'
     licenseUrl = 'https://github.com/MLSDev/AnimationsPack/blob/master/LICENSE'
-    allLicenses = ["MIT"]
+    allLicenses = []
 }
 
 dependencies {
@@ -60,12 +109,9 @@ dependencies {
     implementation "androidx.core:core-ktx:1.0.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.core:core:1.0.2"
+
+    testImplementation 'junit:junit:4.12'
 }
 repositories {
     mavenCentral()
-}
-
-if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/install.gradle'
-    apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/bintray.gradle'
 }
