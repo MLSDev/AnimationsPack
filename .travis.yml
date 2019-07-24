@@ -3,7 +3,8 @@ jdk: oraclejdk8
 sudo: false
 
 before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
 cache:
   directories:      #Cache all dirs under .gradle folder
@@ -26,7 +27,7 @@ before_install:
   - echo $TRAVIS_BUILD_NUMBER
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo -e "\n24333f8a63b6825ea9c5514f83c2829b004d1fee" > "$ANDROID_HOME/licenses/android-sdk-license"
-  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license" // Accepting licens
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license" // Accepting license
   - chmod +x gradlew
 
 script:
@@ -34,8 +35,8 @@ script:
 
 deploy:
   provider: script
-  script: ./gradlew :library:bintrayUpload #replace with your project name
+  script: ./gradlew :library:bintrayUpload --info #replace with your project name
   skip_cleanup: true # to upload artifacts created during the build
-  dry-run: false
+  dry_run: false
   on:
     branch: master
