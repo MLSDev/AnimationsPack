@@ -29,11 +29,11 @@ before_install:
   - chmod +x gradlew
 
 script:
-  - ./gradlew library:clean build
+  - ./gradlew clean :library:assembleRelease
 
 deploy:
   provider: script
-  script: ./gradlew :clean :library:assembleRelease :library:bintrayUpload #replace with your project name
+  script: ./gradlew :library:bintrayUpload #replace with your project name
   skip_cleanup: true # to upload artifacts created during the build
   dry-run: false
   on:
