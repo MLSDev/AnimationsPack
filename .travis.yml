@@ -31,4 +31,4 @@ before_install:
   - chmod +x gradlew
 
 script:
-  - ./gradlew clean :library:assembleRelease :library:bintrayUpload --debug
+  - ./gradlew clean :library:assembleRelease :library:bintrayUpload --info
