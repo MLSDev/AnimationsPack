@@ -25,8 +25,8 @@ install {
                 }
                 developers {
                     developer {
-                        name System.getenv("BINTRAY_USER_EMAIL")
-                        email developerEmail
+                        name developerName
+                        email System.getenv("BINTRAY_USER_EMAIL")
                     }
                 }
                 scm {

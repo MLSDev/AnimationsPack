@@ -48,7 +48,6 @@ ext {
     libraryVersion = VERSION_NAME
 
     developerName = 'Slava Fir'
-    developerEmail = 'fir@mlsdev.com'
 
     licenseName = 'MIT License'
     licenseUrl = 'https://github.com/MLSDev/AnimationsPack/blob/master/LICENSE'
