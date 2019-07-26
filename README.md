@@ -1,14 +1,18 @@
+[![Build Status](https://travis-ci.org/MLSDev/AnimationsPack.svg?branch=master)](https://travis-ci.org/MLSDev/AnimationsPack)
+
 # AnimationsPack
 
 Another implementation of animations inspired by [animate.css](https://github.com/daneden/animate.css) and [AndroidAnimations](https://github.com/daimajia/AndroidViewAnimations)
 
+[ ![Download](https://api.bintray.com/packages/slavafir/AnimationsPack/AnimationsPack/images/download.svg) ](https://bintray.com/slavafir/AnimationsPack/AnimationsPack/_latestVersion)
+
 ## Setup
-To use this library your ` minSdkVersion` must be >= 16.
+To use this library your `minSdkVersion` must be >= 16.
 
 In your build.gradle :
 ```gradle
 dependencies {
-    implementation 'com.mlsdev.androidanimations.library:library:1.0.1'
+    implementation 'com.mlsdev.androidanimations.library:library:1.0.7'
 }
 ```
 
