@@ -9,10 +9,22 @@ Another implementation of animations inspired by [animate.css](https://github.co
 ## Setup
 To use this library your `minSdkVersion` must be >= 16.
 
-In your build.gradle :
+In your top level build.gradle:
+```gradle
+allprojects {
+    repositories {
+        //other repositories
+        maven {
+            url  "https://dl.bintray.com/slavafir/AnimationsPack/"
+        }
+    }
+}
+```
+
+In your project's build.gradle:
 ```gradle
 dependencies {
-    implementation 'com.mlsdev.androidanimations.library:library:1.0.7'
+    implementation 'com.mlsdev.androidanimations.library:AnimationsPack:1.0.7'
 }
 ```
 
